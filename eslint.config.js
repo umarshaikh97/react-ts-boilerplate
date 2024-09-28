@@ -7,7 +7,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 const compat = new FlatCompat();
 
 export default [
-  { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
+  { files: ['**/*.{ts,tsx}'] },
   {
     languageOptions: {
       globals: globals.browser,
@@ -37,7 +37,10 @@ export default [
       'import/extensions': 'off',
       'import/no-unresolved': 'off',
       '@typescript-eslint/no-namespace': 'off',
-      '@typescript-eslint/no-unused-vars': [2, { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_' },
+      ],
       'prettier/prettier': [
         'off',
         {
