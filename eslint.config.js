@@ -27,24 +27,22 @@ export default [
   eslintPluginPrettierRecommended,
   {
     rules: {
-      'react/jsx-uses-react': 'off',
-      'react-hooks/exhaustive-deps': 'off',
-      'react/react-in-jsx-scope': 'off',
-      'import/no-extraneous-dependencies': 'off',
-      'linebreak-style': 'off',
-      'import/no-anonymous-default-export': 'off',
-      'import/named': 'off',
-      'import/extensions': 'off',
-      'import/no-unresolved': 'off',
-      '@typescript-eslint/no-namespace': 'off',
+      'react/react-in-jsx-scope': 'off', // Disables the rule that requires React to be in scope when JSX is used (React 17+ does not need import React in every file).
+      'react-hooks/exhaustive-deps': 'warn', // Warn if any dependencies in your useEffect or other hooks are incorrectly managed.
+      'import/no-extraneous-dependencies': 'off', // Disables the rule that prevents importing dev dependencies in the main source code.
+      'linebreak-style': 'off', // Disables the rule that enforces a consistent linebreak style across environments (useful in cross-platform teams).
+      'import/no-anonymous-default-export': 'off', // Allows using anonymous default exports.
+      'import/named': 'off', // Disables enforcement for named imports.
       '@typescript-eslint/no-unused-vars': [
-        'error',
+        'warn',
         { argsIgnorePattern: '^_' },
-      ],
+      ], // Throws an error for unused variables, but allows ignoring variables that start with an underscore (_).
       'prettier/prettier': [
-        'off',
+        'error', // Set this to 'error' to enforce Prettier formatting via ESLint
         {
-          endOfLine: 'auto',
+          endOfLine: 'auto', // Adjust to handle line endings depending on the environment
+          semi: true, // Example: Enforce semicolons (based on your team's Prettier config)
+          singleQuote: true, // Example: Enforce single quotes
         },
       ],
     },
