@@ -29,10 +29,12 @@ export default [
     rules: {
       'react/react-in-jsx-scope': 'off', // Disables the rule that requires React to be in scope when JSX is used (React 17+ does not need import React in every file).
       'react-hooks/exhaustive-deps': 'warn', // Warn if any dependencies in your useEffect or other hooks are incorrectly managed.
+      'react/function-component-definition': 'off',
       'import/no-extraneous-dependencies': 'off', // Disables the rule that prevents importing dev dependencies in the main source code.
       'linebreak-style': 'off', // Disables the rule that enforces a consistent linebreak style across environments (useful in cross-platform teams).
       'import/no-anonymous-default-export': 'off', // Allows using anonymous default exports.
       'import/named': 'off', // Disables enforcement for named imports.
+      'import/extensions': 'off',
       '@typescript-eslint/no-unused-vars': [
         'warn',
         { argsIgnorePattern: '^_' },
